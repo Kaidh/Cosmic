@@ -23,7 +23,7 @@ class Ban
   
     public static function getBanByUserIp($ip_address)
     {
-        return QueryBuilder::table('bans')->where('ip', $ip_address)->where('ban_expire', '>', time())->where("type", "ip")->orWhere("type", "super")->first();
+        return QueryBuilder::table('bans')->whereIn("type", ["ip","super"])->where('ip', $ip_address)->where('ban_expire', '>', time())->first();
     }
 
     public static function insertBan($user_id, $ip_address, $staff_id, $expire, $reason, $type)
