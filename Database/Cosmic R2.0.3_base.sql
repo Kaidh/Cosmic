@@ -533,6 +533,7 @@ INSERT INTO `website_settings` VALUES ('referral_acc_create_days', '14');
 INSERT INTO `website_settings` VALUES ('referral_points_type', '103');
 INSERT INTO `website_settings` VALUES ('referral_points', '5');
 INSERT INTO `website_settings` VALUES ('referral_waiting_seconds', '3600');
+INSERT INTO `website_settings` VALUES ('user_of_the_week ', NULL);
 
 -- ----------------------------
 -- Table structure for website_settings_currencys
