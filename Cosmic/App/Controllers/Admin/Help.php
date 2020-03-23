@@ -62,7 +62,6 @@ class Help
         foreach ($tickets as $ticket) {
           
             $ticket->subject = Helper::filterString($ticket->subject);
-            $ticket->message = Helper::filterString($ticket->message);
             $ticket->timestamp = Helper::timediff($ticket->timestamp);
             $practitioner_id = Admin::getLatestChangeStatus($ticket->id);
 
