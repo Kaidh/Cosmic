@@ -33,11 +33,13 @@ class Requests
         $ticket->author = Player::getDataById($ticket->player_id, array('username','look'));
         $ticket->ctickets = Help::countTicketsByUserId($ticket->player_id);
         $ticket->latest = Help::latestHelpTicketReaction($ticket->id);
+        $ticket->message = Helper::bbCode($ticket->message);
 
         $reactions = Help::getTicketReactions($ticket->id);
 
         foreach ($reactions as $reaction) {
             $reaction->author = Player::getDataById($reaction->practitioner_id, array('username','look'));
+            $reaction->message = Helper::bbCode($reaction->message);
         }
 
         $this->data->requests = $ticket;
